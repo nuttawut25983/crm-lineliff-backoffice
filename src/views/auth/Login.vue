@@ -1,61 +1,23 @@
 <template>
-  <div class="row ">
-    <div class="col-lg-7">
-      <div style="padding-top:10%; padding-right:10%; padding-left:10%">
-        <div class="col">
-          <vue-particles color="#dedede" class="px-5"></vue-particles>
-          <div class="row text-lg">
-            ฮักษา เมดิคอล: คลินิกที่คุณไว้ใจ
-          </div>
-          <div class="row">
-            <h1 style="font-size:50px">Welcome <br />to</h1>
-            <img class="py-5" src="@/assets/img/logo-saijai.png" />
-          </div>
-          <div class="row">
-            <h1 style="font-size:20px; color:#2e4775; opacity: 0.55;">
-              Login in the your account
-            </h1>
-          </div>
-          <div
-            class="row"
-            style="font-size:14px;padding-top:15%; color:#BBBBBB"
-          >
-            เราให้บริการด้านการแพทย์ โดยยึดหลักการรักษาด้วยหัวใจ
-            ด้วยความห่วงใยผู้ป่วยดุจเสมือนญาติมิตรของเราเอง ให้คุณได้
-            เข้าถึงการตรวจรักษาอย่างใกล้ชิดกับแพทย์ผู้เชี่ยวชาญ
-            เพื่อคุณภาพชีวิตและสุขภาพที่ดีขึ้นของคุณอย่างคุ้มค่าคุ้มราคา
-          </div>
+  <div class="bg-image">
+    <div class="login-wrapper">
+      <div class="login-left">
+        <img src="@/assets/img/Login.png" />
+
+        <div class="h1">
+          Click here
         </div>
       </div>
-    </div>
-    <div class="col-lg-5">
-      <div style="padding-top:45%; padding-left:20%; padding-right:20%;">
-        <form>
-          <h5 style="font-size: 1.50rem; padding-bottom:20px">เข้าสู่ระบบ</h5>
-          <div class="form-group">
-            <label for="username" class="text-gray-500">ชื่อบัญชีผู้ใช้</label>
-            <input
-              id="username"
-              type="text"
-              name="username"
-              class="form-control"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="password" class="text-gray-500">รหัสผ่าน</label>
-            <input
-              id="password"
-              type="password"
-              name="password"
-              class="form-control"
-              required
-            />
-          </div>
-          <button type="submit" class="button">
-            เข้าสู่ระบบ
-          </button>
-        </form>
+      <div class="login-right">
+        <div class="form-group">
+          <input type="text" id="username" placeholder="ชื่อบัญชีผู้ใช้" />
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" placeholder="รหัสผ่าน" />
+        </div>
+        <div class="button-area">
+          <button class="btn btn-secondary">เข้าสู่ระบบ</button>
+        </div>
       </div>
     </div>
   </div>
@@ -63,46 +25,101 @@
 <script>
 export default {
   data() {
-    return {};
+ 
   },
+  mounted () {
+       let openLoginRights = document.querySelector(".h1");
+    let loginWrapper = document.querySelector(".login-wrapper");
+
+    openLoginRights.addEventListener("click", function() {
+      loginWrapper.classList.toggle("open");
+    });
+  }
 };
 </script>
-<style scoped>
-#username {
-  background-color: transparent;
-  border: none;
-  border-radius: 2px;
-  border-bottom: 1px solid #ccc;
-  color: #555;
-}
-#username:focus {
-  outline: none;
-  box-shadow: none;
-}
-#password {
-  background-color: transparent;
-  border: none;
-  border-radius: 2px;
-  border-bottom: 1px solid #ccc;
-  color: #555;
-}
-#password:focus {
-  outline: none;
-  box-shadow: none;
-}
-.button {
-  display: block;
+<style>
+/* .bg-image {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 50px;
-  color: white;
-  background-color: #00205c;
-  border-radius: 50px;
-  transition-duration: 0.4s;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../../assets/img/Login.png");
+} */
+input {
+  border: 0;
+  border-bottom: 1px solid #aaa;
+  color: #000;
+  border-radius: 0;
+}
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  height: 40px;
 }
 
-.button:hover {
-  color: white;
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+.form-group {
+  position: relative;
+  padding-top: 15px;
+}
+input:placeholder-shown {
+  transform: translateY(15px);
+}
+
+.h1 {
+  letter-spacing: 0.2405em;
+  transition: 770ms cubic-bezier(0.51, 0.04, 0.12, 0.99);
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+}
+.open .h1 {
+  transform: translateX(200px) translateZ(0);
+}
+.login-wrapper {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  position: absolute;
+}
+.login-left {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 770ms cubic-bezier(0.51, 0.04, 0.12, 0.99);
+  overflow: hidden;
+}
+.login-left img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: 770ms cubic-bezier(0.51, 0.04, 0.12, 0.99);
+  object-position: left;
+}
+.open .login-left img {
+  transform: translateX(280px) translateZ(0);
+}
+.open .login-left {
+  transform: translateX(-400px) translateZ(0);
+}
+
+.login-right {
+  padding: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  transform: translateX(400px) translateZ(0);
+  transition: 770ms cubic-bezier(0.51, 0.04, 0.12, 0.99);
+}
+.open .login-right {
+  transform: translateX(0px) translateZ(0);
 }
 </style>
