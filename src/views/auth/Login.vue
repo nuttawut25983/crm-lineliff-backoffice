@@ -1,9 +1,8 @@
 <template>
-  <div class="all">
+  <div>
     <div class="login-wrapper">
       <div class="login-left">
         <img src="@/assets/img/Login.png" />
-
         <div class="h1">
           <img src="@/assets/img/logo.png" />
           <div class="text-logo"><img src="@/assets/img/saijai.png" /></div>
@@ -17,7 +16,8 @@
           <input type="password" id="password" placeholder="รหัสผ่าน" />
         </div>
         <div class="button-area">
-          <button class="btn btn-secondary">เข้าสู่ระบบ</button>
+          <router-link to="/admin/tables">
+          <button class="btn btn-secondary">เข้าสู่ระบบ</button></router-link>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
 export default {
   data() {},
   mounted() {
-    let openLoginRights = document.querySelector(".all");
+    let openLoginRights = document.querySelector(".login-left");
     let loginWrapper = document.querySelector(".login-wrapper");
 
     openLoginRights.addEventListener("click", function() {
@@ -37,7 +37,7 @@ export default {
 };
 </script>
 <style>
-.all{
+.all {
   cursor: pointer;
 }
 input {
@@ -93,6 +93,7 @@ input:placeholder-shown {
   align-items: center;
   transition: 770ms cubic-bezier(0.51, 0.04, 0.12, 0.99);
   overflow: hidden;
+  cursor: pointer;
 }
 .login-left img {
   object-fit: cover;
