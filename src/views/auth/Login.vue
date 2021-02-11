@@ -1,11 +1,12 @@
 <template>
-  <div class="bg-image">
+  <div class="all">
     <div class="login-wrapper">
       <div class="login-left">
         <img src="@/assets/img/Login.png" />
 
         <div class="h1">
-          Click here
+          <img src="@/assets/img/logo.png" />
+          <div class="text-logo"><img src="@/assets/img/saijai.png" /></div>
         </div>
       </div>
       <div class="login-right">
@@ -24,31 +25,21 @@
 </template>
 <script>
 export default {
-  data() {
- 
-  },
-  mounted () {
-       let openLoginRights = document.querySelector(".h1");
+  data() {},
+  mounted() {
+    let openLoginRights = document.querySelector(".all");
     let loginWrapper = document.querySelector(".login-wrapper");
 
     openLoginRights.addEventListener("click", function() {
       loginWrapper.classList.toggle("open");
     });
-  }
+  },
 };
 </script>
 <style>
-/* .bg-image {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url("../../assets/img/Login.png");
-} */
+.all{
+  cursor: pointer;
+}
 input {
   border: 0;
   border-bottom: 1px solid #aaa;
@@ -66,7 +57,7 @@ input[type="password"] {
   padding-top: 15px;
 }
 input:placeholder-shown {
-  transform: translateY(15px);
+  transform: translateX(15px);
 }
 
 .h1 {
@@ -75,14 +66,22 @@ input:placeholder-shown {
   text-align: center;
   cursor: pointer;
   position: absolute;
+  width: 300px;
+}
+.text-logo {
+  padding-top: 50px;
 }
 .open .h1 {
-  transform: translateX(200px) translateZ(0);
+  transform: translateZ(400px) translateX(0);
 }
 .login-wrapper {
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  /* background-color: red; */
+  /* background-color: red; */
+  /* background-color: red; */
+  /* background-color: red; */
+
   overflow: hidden;
   position: absolute;
 }
@@ -104,10 +103,10 @@ input:placeholder-shown {
   object-position: left;
 }
 .open .login-left img {
-  transform: translateX(280px) translateZ(0);
+  transform: translateX(300px) translateZ(0);
 }
 .open .login-left {
-  transform: translateX(-400px) translateZ(0);
+  transform: translateX(-500px) translateZ(0);
 }
 
 .login-right {
@@ -115,8 +114,8 @@ input:placeholder-shown {
   position: absolute;
   top: 0;
   right: 0;
-  width: 400px;
-  transform: translateX(400px) translateZ(0);
+  width: 500px;
+  transform: translateX(500px) translateZ(0);
   transition: 770ms cubic-bezier(0.51, 0.04, 0.12, 0.99);
 }
 .open .login-right {
