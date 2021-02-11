@@ -1,38 +1,24 @@
 <template>
   <nav
-    class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
+    class="md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-no-wrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4"
   >
     <div
       class="md:flex-col md:items-stretch md:min-h-full md:flex-no-wrap px-0 flex flex-wrap items-center justify-between w-full mx-auto"
     >
       <!-- Toggler -->
       <button
-        class="cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
+        class="cursor-pointer text-black md:hidden opacity-50 px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent"
         type="button"
         v-on:click="toggleCollapseShow('bg-white m-2 py-3 px-6')"
       >
         <i class="fas fa-bars"></i>
       </button>
       <!-- Brand -->
-      <img src="@/assets/img/logo-saijai.svg"/>
-      <!-- <router-link
-        class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0"
-        to="/"
-      >
-        Vue Notus
-      </router-link> -->
-      <!-- User -->
-      <ul class="md:hidden items-center flex flex-wrap list-none">
-        <li class="inline-block relative">
-          <notification-dropdown />
-        </li>
-        <li class="inline-block relative">
-          <user-dropdown />
-        </li>
-      </ul>
+      <img src="@/assets/img/logo-saijai.svg" />
+
       <!-- Collapse -->
       <div
-        class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded"
+        class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-2 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded"
         v-bind:class="collapseShow"
       >
         <!-- Collapse header -->
@@ -41,12 +27,7 @@
         >
           <div class="flex flex-wrap">
             <div class="w-6/12">
-              <router-link
-                class="md:block text-left md:pb-2 text-gray-700 mr-0 inline-block whitespace-no-wrap text-sm uppercase font-bold p-4 px-0"
-                to="/"
-              >
-                Vue Notus
-              </router-link>
+              <img src="@/assets/img/logo-saijai.svg" />
             </div>
             <div class="w-6/12 flex justify-end">
               <button
@@ -69,14 +50,12 @@
             />
           </div>
         </form>
-
-        <!-- Divider -->
-        <hr class="my-4 md:min-w-full" />
+        <br />
         <!-- Heading -->
         <h6
-          class="md:min-w-full text-gray-600 text-xs uppercase font-bold block pt-1 pb-4 no-underline"
+          class="pl-3 md:min-w-full text-gray-600 text-xs font-bold block pt-1 pb-2 no-underline"
         >
-          Admin Layout Pages
+          Main
         </h6>
         <!-- Navigation -->
 
@@ -84,16 +63,16 @@
           <li class="items-center">
             <router-link
               to="/admin/tables"
-              v-slot="{ href, route, navigate, isActive }"
+              v-slot="{ href, navigate, isActive }"
             >
-              <a
+              <h6
                 :href="href"
                 @click="navigate"
-                class="text-xs py-3 font-bold block"
+                class="text-xs py-3  block"
                 :class="[
                   isActive
-                    ? 'text-green-500 hover:text-green-600'
-                    : 'text-gray-800 hover:text-gray-600',
+                    ? 'bg-gray-200 pl-4'
+                    : 'text-gray-400  hover:text-gray-600 pl-3',
                 ]"
               >
                 <i
@@ -101,22 +80,22 @@
                   :class="[isActive ? 'opacity-75' : 'text-gray-400']"
                 ></i>
                 Member
-              </a>
+              </h6>
             </router-link>
           </li>
           <li class="items-center">
             <router-link
               to="/admin/dashboard"
-              v-slot="{ href, route, navigate, isActive }"
+              v-slot="{ href, navigate, isActive }"
             >
-              <a
+              <h6
                 :href="href"
                 @click="navigate"
-                class="text-xs py-3 font-bold block"
+                class="text-xs py-3  block"
                 :class="[
                   isActive
-                    ? 'text-green-500 hover:text-green-600'
-                    : 'text-gray-800 hover:text-gray-600',
+                    ? 'bg-gray-200 pl-4'
+                    : 'text-gray-400  hover:text-gray-600 pl-3',
                 ]"
               >
                 <i
@@ -124,23 +103,23 @@
                   :class="[isActive ? 'opacity-75' : 'text-gray-400']"
                 ></i>
                 Administration
-              </a>
+              </h6>
             </router-link>
           </li>
 
           <li class="items-center">
             <router-link
               to="/admin/settings"
-              v-slot="{ href, route, navigate, isActive }"
+              v-slot="{ href, navigate, isActive }"
             >
-              <a
+              <h6
                 :href="href"
                 @click="navigate"
-                class="text-xs uppercase py-3 font-bold block"
+                class="text-xs uppercase py-3  block"
                 :class="[
                   isActive
-                    ? 'text-green-500 hover:text-green-600'
-                    : 'text-gray-800 hover:text-gray-600',
+                    ? 'bg-gray-200 pl-4'
+                    : 'text-gray-400  hover:text-gray-600 pl-3',
                 ]"
               >
                 <i
@@ -148,23 +127,20 @@
                   :class="[isActive ? 'opacity-75' : 'text-gray-400']"
                 ></i>
                 Settings
-              </a>
+              </h6>
             </router-link>
           </li>
 
           <li class="items-center">
-            <router-link
-              to="/admin/maps"
-              v-slot="{ href, route, navigate, isActive }"
-            >
-              <a
+            <router-link to="/admin/maps" v-slot="{ href, navigate, isActive }">
+              <h6
                 :href="href"
                 @click="navigate"
-                class="text-xs uppercase py-3 font-bold block"
+                class="text-xs uppercase py-3  block"
                 :class="[
                   isActive
-                    ? 'text-green-500 hover:text-green-600'
-                    : 'text-gray-800 hover:text-gray-600',
+                    ? 'bg-gray-200 pl-4'
+                    : 'text-gray-400  hover:text-gray-600 pl-3',
                 ]"
               >
                 <i
@@ -172,7 +148,7 @@
                   :class="[isActive ? 'opacity-75' : 'text-gray-400']"
                 ></i>
                 Maps
-              </a>
+              </h6>
             </router-link>
           </li>
         </ul>
@@ -215,9 +191,6 @@
 ); }
 
 <script>
-import NotificationDropdown from "@/components/Dropdowns/NotificationDropdown.vue";
-import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
-
 export default {
   data() {
     return {
@@ -229,9 +202,6 @@ export default {
       this.collapseShow = classes;
     },
   },
-  components: {
-    NotificationDropdown,
-    UserDropdown,
-  },
+  components: {},
 };
 </script>
