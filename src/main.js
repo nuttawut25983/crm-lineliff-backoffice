@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
+import VueParticles from 'vue-particles'
+Vue.use(VueParticles)
+
 // styles
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -13,7 +16,7 @@ import App from "@/App.vue";
 // layouts
 
 import Admin from "@/layouts/Admin.vue";
-import Auth from "@/layouts/Auth.vue";
+// import Auth from "@/layouts/Auth.vue";
 
 // views for Admin layout
 
@@ -25,7 +28,7 @@ import Maps from "@/views/admin/Maps.vue";
 // views for Auth layout
 
 import Login from "@/views/auth/Login.vue";
-import Register from "@/views/auth/Register.vue";
+// import Register from "@/views/auth/Register.vue";
 
 // views without layouts
 
@@ -60,20 +63,10 @@ const routes = [
     ],
   },
   {
-    path: "/auth",
-    redirect: "/auth/login",
-    component: Auth,
-    children: [
-      {
-        path: "/auth/login",
-        component: Login,
-      },
-      {
-        path: "/auth/register",
-        component: Register,
-      },
-    ],
+    path: "/auth/login",
+    component: Login,
   },
+
   {
     path: "/landing",
     component: Landing,
@@ -84,7 +77,7 @@ const routes = [
   },
   {
     path: "/",
-    component: Admin,
+    component: Login,
   },
   { path: "*", redirect: "/" },
 ];
