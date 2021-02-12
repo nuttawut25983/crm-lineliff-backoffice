@@ -2,22 +2,29 @@
   <div>
     <div class="login-wrapper">
       <div class="login-left">
-        <img src="@/assets/img/Login.png" />
+        <!-- <img src="@/assets/img/Login.png" /> -->
         <div class="h1">
           <img src="@/assets/img/logo.png" />
           <div class="text-logo"><img src="@/assets/img/saijai.png" /></div>
         </div>
       </div>
       <div class="login-right">
+        <div class="title">เข้าสู่ระบบ</div>
         <div class="form-group">
           <input type="text" id="username" placeholder="ชื่อบัญชีผู้ใช้" />
         </div>
         <div class="form-group">
           <input type="password" id="password" placeholder="รหัสผ่าน" />
         </div>
-        <div class="button-area">
+        <select>
+          <option>Here is the first option</option>
+
+          <option>The second option</option>
+        </select>
+        <div>
           <router-link to="/admin/tables">
-          <button class="btn btn-secondary">เข้าสู่ระบบ</button></router-link>
+            <button class="button">เข้าสู่ระบบ</button></router-link
+          >
         </div>
       </div>
     </div>
@@ -37,27 +44,44 @@ export default {
 };
 </script>
 <style>
-.all {
-  cursor: pointer;
+.title {
+  font-size: 48px;
+  padding-bottom: 50px;
 }
 input {
-  border: 0;
-  border-bottom: 1px solid #aaa;
-  color: #000;
-  border-radius: 0;
+  display: block;
+  border: 1.6px solid #afadad;
+  width: 100%;
+  height: 50px;
+  color: rgb(0, 0, 0);
+  background-color: #d8d8d8;
+  border-radius: 50px;
+  transition-duration: 0.4s;
+  padding-left: 20px;
+}
+input:focus {
+  outline: none;
 }
 input[type="text"],
 input[type="password"] {
   width: 100%;
   height: 40px;
 }
+.custom-dropdown {
+  display: block;
+  border: 1.6px solid #afadad;
+  width: 100%;
+  height: 35px;
+  color: rgb(0, 0, 0);
+  background-color: #d8d8d8;
+  border-radius: 50px;
+  transition-duration: 0.4s;
+  padding-left: 20px;
+}
 
 .form-group {
   position: relative;
   padding-top: 15px;
-}
-input:placeholder-shown {
-  transform: translateX(15px);
 }
 
 .h1 {
@@ -75,13 +99,11 @@ input:placeholder-shown {
   transform: translateZ(400px) translateX(0);
 }
 .login-wrapper {
+  background-image: url("../../assets/img/Login.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   height: 100%;
-  /* background-color: red; */
-  /* background-color: red; */
-  /* background-color: red; */
-  /* background-color: red; */
-
   overflow: hidden;
   position: absolute;
 }
@@ -107,13 +129,15 @@ input:placeholder-shown {
   transform: translateX(300px) translateZ(0);
 }
 .open .login-left {
-  transform: translateX(-500px) translateZ(0);
+  transform: translateX(-600px) translateZ(0);
 }
 
 .login-right {
-  padding: 40px;
+  text-align: center;
+  padding-right: 70px;
+  padding-left: 0;
   position: absolute;
-  top: 0;
+  top: 25%;
   right: 0;
   width: 500px;
   transform: translateX(500px) translateZ(0);
@@ -121,5 +145,15 @@ input:placeholder-shown {
 }
 .open .login-right {
   transform: translateX(0px) translateZ(0);
+}
+
+.button {
+  display: block;
+  width: 100%;
+  height: 45px;
+  color: white;
+  background-color: #00205c;
+  border-radius: 50px;
+  transition-duration: 0.4s;
 }
 </style>
