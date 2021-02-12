@@ -2,12 +2,18 @@
   <div>
     <div class="login-wrapper">
       <div class="login-left">
-        <!-- <img src="@/assets/img/Login.png" /> -->
         <div class="h1">
           <img src="@/assets/img/logo.png" />
-          <div class="text-logo"><img src="@/assets/img/saijai.png" /></div>
+          <div class="text-logo "><img src="@/assets/img/saijai.png" /></div>
+          <div class="clickHere" @click="showhide()">
+            Click here
+            <i
+              class="fas  fa-mouse-pointer pt-5"
+            />
+          </div>
         </div>
       </div>
+
       <div class="login-right">
         <div class="title">เข้าสู่ระบบ</div>
         <div class="form-group">
@@ -16,11 +22,14 @@
         <div class="form-group">
           <input type="password" id="password" placeholder="รหัสผ่าน" />
         </div>
-        <select>
-          <option>Here is the first option</option>
 
-          <option>The second option</option>
+        <select>
+          <option disabled selected value> -เลือกสาขา- </option>
+          <option value="0">หนองหอย</option>
+          <option value="1">ป่าตัน</option>
+          <option value="2">สุเทพ</option>
         </select>
+
         <div>
           <router-link to="/admin/tables">
             <button class="button">เข้าสู่ระบบ</button></router-link
@@ -34,16 +43,27 @@
 export default {
   data() {},
   mounted() {
-    let openLoginRights = document.querySelector(".login-left");
+    let openLoginRights = document.querySelector(".clickHere");
     let loginWrapper = document.querySelector(".login-wrapper");
 
     openLoginRights.addEventListener("click", function() {
       loginWrapper.classList.toggle("open");
     });
   },
+  methods: {
+    showhide() {
+      var text = document.querySelector(".clickHere");
+      text.classList.add("d-none");
+    },
+  },
 };
 </script>
 <style>
+.clickHere {
+  font-size: 32px;
+  cursor: pointer;
+}
+
 .title {
   font-size: 48px;
   padding-bottom: 50px;
@@ -67,28 +87,17 @@ input[type="password"] {
   width: 100%;
   height: 40px;
 }
-.custom-dropdown {
-  display: block;
-  border: 1.6px solid #afadad;
-  width: 100%;
-  height: 35px;
-  color: rgb(0, 0, 0);
-  background-color: #d8d8d8;
-  border-radius: 50px;
-  transition-duration: 0.4s;
-  padding-left: 20px;
-}
 
 .form-group {
   position: relative;
-  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .h1 {
   letter-spacing: 0.2405em;
   transition: 770ms cubic-bezier(0.51, 0.04, 0.12, 0.99);
   text-align: center;
-  cursor: pointer;
+
   position: absolute;
   width: 300px;
 }
@@ -115,7 +124,6 @@ input[type="password"] {
   align-items: center;
   transition: 770ms cubic-bezier(0.51, 0.04, 0.12, 0.99);
   overflow: hidden;
-  cursor: pointer;
 }
 .login-left img {
   object-fit: cover;
@@ -147,7 +155,23 @@ input[type="password"] {
   transform: translateX(0px) translateZ(0);
 }
 
+select {
+  display: flex;
+  align-items: left;
+  border: none;
+  background-color: #d8d8d8;
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1.6px solid #afadad;
+  border-radius: 50px;
+}
+select:focus {
+  outline: none;
+}
+
 .button {
+  margin-top: 50px;
   display: block;
   width: 100%;
   height: 45px;
