@@ -5,11 +5,9 @@
         <div class="h1">
           <img src="@/assets/img/logo.png" />
           <div class="text-logo "><img src="@/assets/img/saijai.png" /></div>
-          <div class="clickHere" @click="showhide()">
-            Click here
-            <i
-              class="fas  fa-mouse-pointer pt-5"
-            />
+
+          <div>
+            <button class="clickHere" @click="showhide()">เข้าใช้งาน</button>
           </div>
         </div>
       </div>
@@ -23,7 +21,7 @@
           <input type="password" id="password" placeholder="รหัสผ่าน" />
         </div>
 
-        <select>
+        <select class="pl-3">
           <option disabled selected value> -เลือกสาขา- </option>
           <option value="0">หนองหอย</option>
           <option value="1">ป่าตัน</option>
@@ -60,10 +58,23 @@ export default {
 </script>
 <style>
 .clickHere {
-  font-size: 32px;
-  cursor: pointer;
-}
+  font-size: 28px;
 
+  margin-top: 50px;
+  border: none;
+  width: 100%;
+  height: 45px;
+  color: white;
+  background-color: #00205c;
+  border-radius: 50px;
+  transition-duration: 0.4s;
+}
+.clickHere:hover {
+  font-size: 30px;
+  outline: none;
+  text-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px #000000;
+}
 .title {
   font-size: 48px;
   padding-bottom: 50px;
@@ -179,5 +190,10 @@ select:focus {
   background-color: #00205c;
   border-radius: 50px;
   transition-duration: 0.4s;
+}
+.button:hover {
+  outline: none;
+  text-shadow: 0 0 11px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 4px #000000;
 }
 </style>

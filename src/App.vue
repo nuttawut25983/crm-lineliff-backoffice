@@ -3,7 +3,7 @@
     <router-view />
   </div>
 </template>
-<style scoped>
+<style>
 body {
   font-family: "Mitr", sans-serif;
 }

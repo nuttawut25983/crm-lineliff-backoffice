@@ -38,122 +38,17 @@
             </button>
           </h3>
         </div>
-        <form>
-          <div
-            class="modal fade"
-            id="exampleModalCenter"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true"
-          >
-            <div
-              class="modal-dialog modal-dialog-centered modal-lg"
-              role="document"
-            >
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h2
-                    class="modal-title font-weight-bold"
-                    id="exampleModalLongTitle"
-                  >
-                    เพิ่มข้อมูลลูกค้า
-                  </h2>
-                  <button
-                    type="button"
-                    class="close"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                  >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <div class="container">
-                    <div class="row px-5">
-                      <div class="col">
-                        <input
-                          type="text"
-                          id="exampleFormControlInput1"
-                          class="form-control mb-3"
-                          placeholder="ชื่อ"
-                          required
-                        />
-                      </div>
-                      <div class="col">
-                        <input
-                          type="text"
-                          id="exampleFormControlInput1"
-                          class="form-control"
-                          placeholder="นามสกุล"
-                        />
-                      </div>
-                    </div>
-                    <div class="row px-5">
-                      <div class="col">
-                        <div>
-                          <datepicker
-                            :bootstrap-styling="true"
-                            class="mb-3  rounded"
-                            placeholder="วันเกิด"
-                          ></datepicker>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <select
-                          class="form-control"
-                          id="exampleFormControlSelect1"
-                        >
-                          <option value="" disabled selected hidden>เพศ</option>
-                          <option>ชาย</option>
-                          <option>หญิง</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="px-5">
-                      <input
-                        type="email"
-                        class="form-control mb-3"
-                        id="exampleFormControlInput1"
-                        placeholder="Email"
-                      />
-                    </div>
-                    <div class="px-5">
-                      <input
-                        type="number"
-                        class="form-control"
-                        id="exampleFormControlInput1"
-                        placeholder="เบอร์โทรศัพท์"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary">
-                    เพิ่มลูกค้า
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-danger"
-                    data-dismiss="modal"
-                  >
-                    ยกเลิก
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
+        <CreateMember />
       </div>
     </div>
     <div class="block w-full overflow-x-auto">
       <!-- Projects table -->
 
-      <table class="table">
+      <table class="table table-hover">
         <thead>
-          <tr class="text-sm text-nowrap" style="color: #96A5B8">
+          <tr class="text-sm" style="color: #96A5B8">
             <td scope="col" class="px-4">Name</td>
-
+            <td scope="col">โค้ดยืนยันตัวตน</td>
             <td scope="col">จำนวนคอร์สคงเหลือ</td>
             <td scope="col">จำนวนคอร์สที่ใช้</td>
             <td scope="col">นัดหมายลูกค้า</td>
@@ -170,9 +65,14 @@
                   class="rounded"
                   style="width:50px"
                 />
-                <div class="pl-2">Sims House</div>
+                <div class="pl-2">
+                  <router-link to="/admin/tables/detail/1">
+                    Sims House</router-link
+                  >
+                </div>
               </div>
             </td>
+            <td>xx-xxxxx</td>
             <td>
               <button
                 disabled
@@ -208,6 +108,7 @@
                 <div class="pl-2">Sims House</div>
               </div>
             </td>
+            <td>xx-xxxxx</td>
             <td>
               <button
                 disabled
@@ -239,7 +140,7 @@
 </template>
 <script>
 import TableDropdown from "@/components/Dropdowns/TableDropdown.vue";
-import Datepicker from "vuejs-datepicker";
+import CreateMember from "@/components/Modal/CreateMember.vue";
 
 export default {
   data() {
@@ -247,7 +148,7 @@ export default {
   },
   components: {
     TableDropdown,
-    Datepicker,
+    CreateMember,
   },
   props: {
     color: {

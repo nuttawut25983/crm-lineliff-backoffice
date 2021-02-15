@@ -1292,7 +1292,7 @@ video {
 }
 
 .bg-full {
-  background-size: 100$;
+  background-size: 100%;
 }
 
 .border-collapse {
@@ -3513,6 +3513,9 @@ video {
 
   .md\:mt-40 {
     margin-top: 10rem;
+  }
+  .md\:ml-52 {
+    margin-left: 13rem;
   }
 
   .md\:mt-64 {

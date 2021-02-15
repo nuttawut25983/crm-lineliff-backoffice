@@ -36,6 +36,9 @@ import Landing from "@/views/Landing.vue";
 import Profile from "@/views/Profile.vue";
 // import Index from "@/views/Index.vue";
 
+// import Components detail member";
+import CardDetailMember from "@/components/Cards/CardDetailMember.vue";
+
 // routes
 
 const routes = [
@@ -55,6 +58,10 @@ const routes = [
       {
         path: "/admin/tables",
         component: Tables,
+      },
+      {
+        path: "/admin/tables/detail/:id",
+        component: CardDetailMember,
       },
       {
         path: "/admin/maps",

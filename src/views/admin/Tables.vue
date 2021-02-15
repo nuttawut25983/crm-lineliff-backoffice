@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-wrap">
-    <div class="w-full mb-12 px-4">
+    <div class="w-full">
       <card-table />
     </div>
   </div>
