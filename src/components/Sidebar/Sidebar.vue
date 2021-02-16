@@ -62,7 +62,7 @@
         <ul class="md:flex-col md:min-w-full flex flex-col list-none cursor-pointer">
           <li class="items-center">
             <router-link
-              to="/admin/tables"
+              to="/members"
               v-slot="{ href, navigate, isActive }"
             >
               <h6
@@ -85,7 +85,7 @@
           </li>
           <li class="items-center">
             <router-link
-              to="/admin/dashboard"
+              to="/admin"
               v-slot="{ href, navigate, isActive }"
             >
               <h6
