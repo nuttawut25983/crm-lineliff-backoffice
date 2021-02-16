@@ -48,6 +48,7 @@
                     <datepicker
                       :bootstrap-styling="true"
                       class="mb-3 rounded"
+                      id="dob"
                       placeholder="วันเกิด"
                     ></datepicker>
                   </div>
@@ -192,3 +193,14 @@ export default {
   },
 };
 </script>
+<style>
+#fname,
+#lname,
+#dob,
+#gender,
+#email,
+#phone {
+  width: 100%;
+  height: 40px;
+}
+</style>

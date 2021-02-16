@@ -23,10 +23,7 @@
           <div class="row">อีเมล : xxx_xx@gmail.com</div>
         </div>
         <div class="col">
-          <div class="row">สมาชิกระดับ</div>
-          <div class="row">------</div>
-          <div class="row">สมาชิกระดับ</div>
-          <div class="row">------</div>
+          <Progress />
         </div>
       </div>
       <ul class="nav nav-tabs pt-3">
@@ -66,6 +63,7 @@
 import CourseDetail from "@/components/TabNav/CourseDetail.vue";
 import Appointment from "@/components/TabNav/Appointment.vue";
 import History from "@/components/TabNav/History.vue";
+import Progress from "@/components/Progress/Progress.vue";
 export default {
   data() {
     return {};
@@ -75,6 +73,7 @@ export default {
     CourseDetail,
     Appointment,
     History,
+    Progress,
   },
 };
 </script>
