@@ -22,16 +22,16 @@
         </div>
 
         <select class="pl-3">
-          <option disabled selected value> -เลือกสาขา- </option>
+          <option disabled selected value>-เลือกสาขา-</option>
           <option value="0">หนองหอย</option>
           <option value="1">ป่าตัน</option>
           <option value="2">สุเทพ</option>
         </select>
 
         <div>
-          <router-link to="/admin/tables">
-            <button class="button">เข้าสู่ระบบ</button></router-link
-          >
+          <!-- <router-link to="/admin/tables"> -->
+            <button class="button" @click="handleLogin">เข้าสู่ระบบ</button>
+          <!-- </router-link> -->
         </div>
       </div>
     </div>
@@ -39,12 +39,14 @@
 </template>
 <script>
 export default {
-  data() {},
+  data() {
+    return {}
+  },
   mounted() {
     let openLoginRights = document.querySelector(".clickHere");
     let loginWrapper = document.querySelector(".login-wrapper");
 
-    openLoginRights.addEventListener("click", function() {
+    openLoginRights.addEventListener("click", function () {
       loginWrapper.classList.toggle("open");
     });
   },
@@ -53,6 +55,10 @@ export default {
       var text = document.querySelector(".clickHere");
       text.classList.add("d-none");
     },
+    handleLogin() {
+      console.log(this)
+      this.$router.push('/members')
+    }
   },
 };
 </script>
