@@ -1,8 +1,9 @@
 <template>
   <form>
+    <!-- modal create member -->
     <div
       class="modal fade"
-      id="exampleModalCenter"
+      id="ModalCreateMember"
       tabindex="-1"
       role="dialog"
       aria-labelledby="exampleModalCenterTitle"
@@ -84,8 +85,7 @@
               type="button"
               class="btn btn-secondary"
               style="background-color:#00205C; border-radius:7px; width:100px;"
-              data-toggle="modal"
-              data-target="#modalSuccess"
+              @click="handleCreateMember"
             >
               เพิ่มลูกค้า
             </button>
@@ -98,7 +98,7 @@
               ยกเลิก
             </button>
           </div>
-
+          <!--modal create success -->
           <div
             class="modal fade"
             id="modalSuccess"
@@ -163,5 +163,13 @@ export default {
   components: {
     Datepicker,
   },
+  methods: {
+    handleCreateMember() {
+      // alert("xxxx")
+  
+      // $('#modalSuccess').modal('show')
+      // $('#ModalCreateMember').modal('hide')
+    }
+  }
 };
 </script>
