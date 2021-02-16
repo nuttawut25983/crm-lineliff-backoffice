@@ -123,10 +123,10 @@
                 ]"
               >
                 <i
-                  class="fas fa-tools mr-2 text-sm"
+                  class="fas fa-home mr-2 text-sm"
                   :class="[isActive ? 'opacity-75' : 'text-gray-400']"
                 ></i>
-                Settings
+                Theme
               </h6>
             </router-link>
           </li>
@@ -147,7 +147,7 @@
                   class="fas fa-map-marked mr-2 text-sm"
                   :class="[isActive ? 'opacity-75' : 'text-gray-400']"
                 ></i>
-                Maps
+                Course
               </h6>
             </router-link>
           </li>
