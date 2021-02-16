@@ -34,13 +34,12 @@
                 width: 100px;
               "
               data-toggle="modal"
-              data-target="#exampleModalCenter"
+              data-target="#ModalCreateAdmin"
             >
               Create new
             </button>
           </h3>
         </div>
-        <CreateMember />
       </div>
     </div>
     <div class="block w-full overflow-x-auto">
@@ -123,11 +122,12 @@
         </tbody>
       </table>
     </div>
+    <CreateAdmin />
   </div>
 </template>
 <script>
 import TableDropdown from "@/components/Dropdowns/TableDropdown.vue";
-import CreateMember from "@/components/Modal/CreateMember.vue";
+import CreateAdmin from "@/components/Modal/CreateAdmin.vue";
 
 export default {
   data() {
@@ -135,7 +135,7 @@ export default {
   },
   components: {
     TableDropdown,
-    CreateMember,
+    CreateAdmin,
   },
   props: {
     color: {

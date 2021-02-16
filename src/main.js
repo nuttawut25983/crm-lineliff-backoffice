@@ -12,7 +12,6 @@ import "@/assets/styles/tailwind.css";
 
 import App from "@/App.vue";
 
-
 // app config
 
 // Vue.config.productionTip = false;
