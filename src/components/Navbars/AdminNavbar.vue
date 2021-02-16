@@ -7,8 +7,9 @@
       class="w-full mx-autp items-center flex justify-between md:flex-no-wrap flex-wrap md:px-10 px-4"
     >
       <button
-        class="cursor-pointer text-black opacity-50 px-3 py-1 text-xl leading-none bg-transparent rounded"
+        class="cursor-pointer text-black opacity-50 pr-3 py-1 text-xl leading-none bg-transparent rounded"
         type="button"
+        @click="toggleNav"
       >
         <i class="fas fa-bars"></i>
       </button>
@@ -40,14 +41,13 @@
       <div
         class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
       >
-      
         <div class="relative flex w-full flex-wrap items-stretch">
-            <button
-        class="cursor-pointer text-black opacity-50 px-4 py-1 text-x leading-none"
-        type="button"
-      >
-        <i class="fas fa-bell"></i>
-      </button>
+          <button
+            class="cursor-pointer text-black opacity-50 px-4 py-1 text-x leading-none"
+            type="button"
+          >
+            <i class="fas fa-bell"></i>
+          </button>
           <span
             class="z-10 h-full leading-snug font-normal absolute text-center text-gray-400 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"
           >
@@ -55,10 +55,8 @@
           <div class="row">
             <user-dropdown class="px-2" />
             <div class="col">
-              <div class="row text-md font-semibold">
-                Lelia Porter
-              </div>
-              <div class="row text-sm font-semibold" style="color:#7B91B0">
+              <div class="row text-md font-semibold">Lelia Porter</div>
+              <div class="row text-sm font-semibold" style="color: #7b91b0">
                 Marketing Administrator
               </div>
             </div>
@@ -73,8 +71,16 @@
 <script>
 import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
 export default {
+  data() {
+    return {};
+  },
   components: {
     UserDropdown,
+  },
+  methods: {
+    toggleNav() {
+      this.$parent.$emit("toggleNav");
+    },
   },
 };
 </script>

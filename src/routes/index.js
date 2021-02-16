@@ -11,6 +11,9 @@ import DetailMember from "../components/Members/DetailMember"
 //administrator
 import Administrator from "../components/Administrator/Administrator"
 
+//theme 
+import Theme from "../components/Theme/Theme"
+
 
 vue.use(Router);
 
@@ -50,6 +53,11 @@ const router = new Router({
           path: "/admin",
           name: "admin",
           component: Administrator
+        },
+        {
+          path: "/theme",
+          name: "theme",
+          component: Theme
         }
       ],
     },
