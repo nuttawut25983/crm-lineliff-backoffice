@@ -2,6 +2,7 @@ import Vue from "vue";
 import router from "./routes"
 // import VueParticles from 'vue-particles'
 // Vue.use(VueParticles)
+// test
 import VCalendar from 'v-calendar'
 // styles
 
