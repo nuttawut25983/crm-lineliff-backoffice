@@ -26,33 +26,36 @@
           <Progress />
         </div>
       </div>
-      <ul class="nav nav-tabs pt-3">
-        <li class="nav-item ">
-          <a class="nav-link active" data-toggle="tab" href="#course-detail"
-            >ข้อมูลคอร์ส</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#appointment"
-            >การนัดหมาย</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="tab" href="#history"
-            >ประวัติใช้บริการ</a
-          >
-        </li>
-      </ul>
-      <!-- ข้อมูลคอร์ส component-->
-      <div class="tab-content m-5">
-        <div id="course-detail" class="tab-pane fade active show">
-          <CourseDetail />
-        </div>
-        <div id="appointment" class="tab-pane fade">
-          <Appointment />
-        </div>
-        <div id="history" class="tab-pane fade">
-          <History />
+
+      <div class="p-5">
+        <ul class="nav nav-tabs pt-3">
+          <li class="nav-item ">
+            <a class="nav-link active" data-toggle="tab" href="#course-detail"
+              >ข้อมูลคอร์ส</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#appointment"
+              >การนัดหมาย</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#history"
+              >ประวัติใช้บริการ</a
+            >
+          </li>
+        </ul>
+        <!-- ข้อมูลคอร์ส component-->
+        <div class="tab-content" id="content-border">
+          <div id="course-detail" class="tab-pane fade active show">
+            <CourseDetail />
+          </div>
+          <div id="appointment" class="tab-pane fade">
+            <Appointment />
+          </div>
+          <div id="history" class="tab-pane fade">
+            <History />
+          </div>
         </div>
       </div>
     </div>
@@ -77,3 +80,17 @@ export default {
   },
 };
 </script>
+
+<style>
+#content-border {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.nav-tabs {
+  margin-bottom: 0;
+}
+</style>
