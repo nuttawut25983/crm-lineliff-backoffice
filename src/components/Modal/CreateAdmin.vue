@@ -25,7 +25,7 @@
           <div class="modal-body">
             <div class="container">
               <div class="row px-5 mb-2">
-                <div class="col">
+                <div class="col mb-2">
                   <select class="form-control" name="branch" id="branch">
                     <option value="">--สาขา--</option>
                   </select>
@@ -66,6 +66,7 @@
                     <datepicker
                       :bootstrap-styling="true"
                       class="mb-3 rounded"
+                      id="dob"
                       placeholder="วันเกิด"
                     ></datepicker>
                   </div>
@@ -163,10 +164,22 @@ export default {
 </script>
 <style>
 select {
-    border-radius: 5px;
-    border: 1px solid;
-    height: auto;
-    background: #FFF;
-
+  border-radius: 5px;
+  border: 1px solid;
+  height: auto;
+  background: #fff;
+}
+#fname,
+#lname,
+#gender,
+#dob,
+#phone,
+#branch,
+#role,
+#position,
+#username,
+#password {
+  width: 100%;
+  height: 40px;
 }
 </style>

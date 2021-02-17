@@ -13,12 +13,10 @@
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run serve"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "5.14.0",
-    "@popperjs/core": "2.5.1",
-    "@tailwindcss/custom-forms": "0.2.1",
     "axios": "^0.21.1",
     "chart.js": "2.9.3",
     "core-js": "3.6.5",
+    "@fortawesome/fontawesome-free": "5.14.0",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
     "luxon": "^1.25.0",
@@ -32,7 +30,9 @@
     "vue-router": "3.4.3",
     "vuejs-datepicker": "^1.6.2",
     "vuex": "^3.6.0",
-    "weekstart": "^1.0.1"
+    "weekstart": "^1.0.1",
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "4.5.6",

@@ -1,5 +1,6 @@
 <template>
   <div
+    id="member-detail"
     class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white"
   >
     <div class="rounded-t bg-white mb-0 px-6 py-6">
@@ -22,15 +23,12 @@
           <div class="row">อีเมล : xxx_xx@gmail.com</div>
         </div>
         <div class="col">
-          <div class="row">สมาชิกระดับ</div>
-          <div class="row">------</div>
-          <div class="row">สมาชิกระดับ</div>
-          <div class="row">------</div>
+          <Progress />
         </div>
       </div>
-      <ul class="nav nav-tabs">
+      <ul class="nav nav-tabs pt-3">
         <li class="nav-item ">
-          <a class="nav-link active" data-toggle="tab" href="#detail"
+          <a class="nav-link active" data-toggle="tab" href="#course-detail"
             >ข้อมูลคอร์ส</a
           >
         </li>
@@ -45,21 +43,37 @@
           >
         </li>
       </ul>
-
-      <div class="tab-content">
-        <div id="detail" class="tab-pane fade active show">
-          <h3>ข้อมูลคอร์ส</h3>
-          <p>Some content.</p>
+      <!-- ข้อมูลคอร์ส component-->
+      <div class="tab-content m-5">
+        <div id="course-detail" class="tab-pane fade active show">
+          <CourseDetail />
         </div>
         <div id="appointment" class="tab-pane fade">
-          <h3>Menu 1</h3>
-          <p>Some content in menu 1.</p>
+          <Appointment />
         </div>
         <div id="history" class="tab-pane fade">
-          <h3>Menu 2</h3>
-          <p>Some content in menu 2.</p>
+          <History />
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import CourseDetail from "@/components/TabNav/CourseDetail.vue";
+import Appointment from "@/components/TabNav/Appointment.vue";
+import History from "@/components/TabNav/History.vue";
+import Progress from "@/components/Progress/Progress.vue";
+export default {
+  data() {
+    return {};
+  },
+
+  components: {
+    CourseDetail,
+    Appointment,
+    History,
+    Progress,
+  },
+};
+</script>
