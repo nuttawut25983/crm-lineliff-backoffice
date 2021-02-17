@@ -109,7 +109,7 @@
 
           <li class="items-center">
             <router-link
-              to="/admin/settings"
+              to="/theme"
               v-slot="{ href, navigate, isActive }"
             >
               <h6
