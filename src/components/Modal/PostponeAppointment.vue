@@ -1,18 +1,20 @@
 <template>
   <div>
-    <!-- modal manage appointment -->
+    <!-- modal postpone appointment -->
     <div
       class="modal fade"
-      id="ModalManageAppointment"
+      id="ModalPostponeAppointment"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="ModalManageAppointmentCenterTitle"
+      aria-labelledby="ModalPostponeAppointmentCenterTitle"
       aria-hidden="true"
     >
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h2 class="modal-title font-weight-bold text-xl">จัดการนัดหมาย</h2>
+            <h2 class="modal-title font-weight-bold text-xl">
+              เลื่อนจัดการนัดหมาย
+            </h2>
             <button
               type="button"
               class="close"
@@ -50,7 +52,7 @@
                   class="btn btn-secondary btn-sm"
                   style="background-color:#00205C; border-radius:7px; width:100px;"
                 >
-                  สร้างนัดหมาย
+                  เลื่อนนัดหมาย
                 </button>
               </div>
               <div class="p-2">
@@ -82,35 +84,6 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
-            <div class="border rounded mt-5 mb-5">
-              <div class="text-center">
-                <table class="table table-borderless">
-                  <thead>
-                    <tr>
-                      <th scope="col">ครั้งที่</th>
-                      <th scope="col">สาขา</th>
-                      <th scope="col">วันที่</th>
-                      <th scope="col">การชำระ</th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>xxxxxx</td>
-                      <td>10-02-2021</td>
-                      <td style="color:#43C506">ชำระแล้ว</td>
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>xxxxxx</td>
-                      <td>13-02-2021</td>
-                      <td style="color:#43C506">ชำระแล้ว</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
             </div>
           </div>
         </div>

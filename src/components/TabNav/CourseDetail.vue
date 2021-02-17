@@ -77,12 +77,12 @@
                       class="btn btn-secondary btn-sm"
                       style="background-color:#00205C; border-radius:7px; width:100px;"
                       data-toggle="modal"
-                      data-target="#ModalCreateMember"
+                      data-target="#ModalManageAppointment"
                     >
                       จัดการวันนัด
                     </button>
                   </td>
-                  <CreateMember />
+                  <ManageAppointment />
                 </tr>
                 <tr class="text-sm">
                   <td>
@@ -306,15 +306,14 @@
 </template>
 
 <script>
-// import ManageAppointment from "@/components/Modal/ManageAppointment.vue";
-import CreateMember from "@/components/Modal/CreateMember.vue";
+import ManageAppointment from "@/components/Modal/ManageAppointment.vue";
+
 export default {
   data() {
     return {};
   },
   components: {
-    // ManageAppointment,
-    CreateMember,
+    ManageAppointment,
   },
 };
 </script>
